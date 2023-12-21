@@ -13,3 +13,11 @@ export type MonitorStatus = {
 
 	checks: MonitorTest[];
 };
+
+export function unwrap_or<T>(value: T | undefined, fallback: T): T {
+	if (value === undefined) {
+		return fallback;
+	} else {
+		return value;
+	}
+}
