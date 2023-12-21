@@ -10,9 +10,9 @@
 	$: known = success + failure > 0;
 
 	$: failuresContent = `Failures Count: ${failure}`;
-	$: successContent = `Average Latency: ${
+	$: successContent = `Average Latency: ${Math.trunc(
 		successValues.reduce((s, v) => s + v, 0) / successValues.length
-	}`;
+	)}`;
 
 	$: content = [failure > 0 ? failuresContent : '', success > 0 ? successContent : '']
 		.filter((s) => s)
